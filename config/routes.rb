@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :tokens, defaults: { format: :json }, only: :new
-  resources :posts, defaults: { format: :json }, only: %i(index show)
+  resources :posts, defaults: { format: :json }, only: %i(index show create)
 
   root 'main#index'
 
