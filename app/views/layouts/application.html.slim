@@ -1,0 +1,19 @@
+doctype html
+html ng-app='omiliaApp'
+  head
+    title Omilia
+    = stylesheet_link_tag 'application', media: 'all'
+    = javascript_include_tag 'application'
+    = csrf_meta_tags
+  body
+    nav.navbar.navbar-default.navbar-fixed-top
+      .container
+        .navbar-header
+          a.navbar-brand href='#/posts' Omilia
+        ul.nav.navbar-nav.navbar-right
+          li: a href="#/posts" Posts
+          li: a href="#/about" About
+    .container
+      .row
+        .col-md-12
+          = yield
