@@ -1,1 +1,8 @@
-p Placeholder for login form
+form ng-submit='login()' novalidate=''
+  .form-group
+    label for='email' Email address
+    input.form-control#email type='email' ng-model='user.email'
+  .form-group
+    label for='password' Password
+    input.form-control#password type='password' ng-model='user.password'
+  button.btn.btn-default type='submit' Submit
