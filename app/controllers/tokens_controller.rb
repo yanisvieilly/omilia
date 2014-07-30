@@ -1,7 +1,7 @@
 class TokensController < ApplicationController
   respond_to :json
 
-  def new
+  def create
     @user = User.find_by(email: params[:email])
     if @user && @user.authenticate(params[:password])
       @token = { token: JWT.encode({ 'user_id' => @user.id }, Rails.application.secrets.secret_key_jwt) }
