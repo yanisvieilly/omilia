@@ -8,3 +8,8 @@ angular.module 'tokensControllers', ['tokenServices']
 
     $scope.login = ->
       authentication.login $scope.user
+        .then ->
+          console.log 'Login successful'
+        .then null, (err) ->
+          console.log 'Login failed'
+          console.log err
