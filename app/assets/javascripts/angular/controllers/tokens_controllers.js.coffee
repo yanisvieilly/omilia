@@ -1,12 +1,10 @@
 angular.module 'tokensControllers', ['tokenServices']
 
-  .controller 'TokensNewCtrl', ($scope, Token) ->
+  .controller 'TokensNewCtrl', ($scope, authentication) ->
 
     $scope.user =
       email: ''
       password: ''
 
-    $scope.login = (user) ->
-      Token.$post Token.$url(), $scope.user
-        .then (token) ->
-          sessionStorage.setItem 'token', token
+    $scope.login = ->
+      authentication.login $scope.user
