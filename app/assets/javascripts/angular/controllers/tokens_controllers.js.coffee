@@ -1,6 +1,5 @@
 angular.module 'tokensControllers', ['tokenServices']
 
-angular.module 'tokensControllers'
   .controller 'TokensNewCtrl', ($scope, Token) ->
 
     $scope.user =
