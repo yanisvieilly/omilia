@@ -8,7 +8,7 @@
 
   login: (user) ->
     deferred = $q.defer()
-    Token.$post Token.$url(), user
+    new Token(user).create()
       .then (token) =>
         @setToken token
         deferred.resolve()
